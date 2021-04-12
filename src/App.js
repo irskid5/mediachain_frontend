@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FileUpload from './components/FileUpload';
-import axios from "axios";
+// import axios from "axios";
 
 import logo from './media/logo_transparent.png'
 
@@ -13,7 +13,7 @@ function App() {
     <div className="app_container">
       <div className="app_row">
         <div className="app_logo">
-          <img className="logo" src={logo}></img>
+          <img className="logo" src={logo} alt=""></img>
         </div>
       </div>
       <div className="app_row">
