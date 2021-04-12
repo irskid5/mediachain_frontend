@@ -35,7 +35,7 @@ function App() {
           (3) Let the World know!
         </h2>
       </div>
-      <div className="app_row">
+      <div className="app_row" style={{ flexDirection: "column" }}>
         <FileUpload />
       </div>
     </div>
