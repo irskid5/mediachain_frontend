@@ -18,7 +18,7 @@ function App() {
       </div>
       <div className="app_row">
         <h1>
-          Make those who break the rules accountable
+          Providing accountability and immutability
         </h1>
       </div>
       <div className="app_row" style={{ flexDirection: "column" }}>
