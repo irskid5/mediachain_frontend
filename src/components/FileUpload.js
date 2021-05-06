@@ -24,9 +24,9 @@ const FileUpload = () => {
       // on reader load somthing...
       reader.onload = () => {
         // Make a fileInfo Object
-        console.log("Called", reader);
+        // console.log("Called", reader);
         baseURL = reader.result.split(",");
-        console.log(baseURL);
+        // console.log(baseURL);
         resolve(baseURL[1]);
       };
       console.log(fileInfo);
@@ -38,7 +38,7 @@ const FileUpload = () => {
     getBase64(e.target.files[0])
       .then(result => {
         setFile(result);
-        console.log("File Is", file);
+        // console.log("File Is", file);
       })
       .catch(err => {
         console.log(err);
@@ -61,22 +61,17 @@ const FileUpload = () => {
         }
       });
 
-      // console.log(file);
-      var fileName = filename;
-      var filePath = "../test/" + filename;
-
       const result = res.data;
       console.log(res);
-      setUploadedFile({ fileName, filePath });
-      setLink("https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg")
-      console.log(uploadedFile.filePath)
+      setUploadedFile({ fileName: result.results.path, filePath: "https://ipfs.io/ipfs/" + result.results.hash });
+      setLink("https://ipfs.io/ipfs/" + result.results.hash)
       setMessage('File uploaded');
     } catch (err) {
-      // if (err.response.status === 500) {
-      //   setMessage('There was a problem with the server');
-      // } else {
-      //   setMessage(err.response.data.msg);
-      // }
+      if (err.response.status === 500) {
+        setMessage('There was a problem with the server');
+      } else {
+        setMessage(err.response.data.msg);
+      }
       console.log(err);
     }
   }
