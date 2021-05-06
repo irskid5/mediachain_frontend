@@ -64,6 +64,7 @@ const FileUpload = () => {
       const result = res.data;
       console.log(res);
       setUploadedFile({ fileName: result.results.path, filePath: "https://ipfs.io/ipfs/" + result.results.hash });
+      console.log(uploadedFile);
       setLink("https://ipfs.io/ipfs/" + result.results.hash)
       setMessage('File uploaded');
     } catch (err) {
